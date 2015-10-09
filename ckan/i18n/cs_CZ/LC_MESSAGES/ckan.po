@@ -2893,7 +2893,7 @@ msgstr "organizace"
 
 #: ckan/templates/home/snippets/stats.html:17
 msgid "organizations"
-msgstr "organizace"
+msgstr "organizací"
 
 #: ckan/templates/home/snippets/stats.html:23
 msgid "group"
@@ -2901,7 +2901,11 @@ msgstr "skupina"
 
 #: ckan/templates/home/snippets/stats.html:23
 msgid "groups"
-msgstr "skupiny"
+msgstr "skupin"
+
+#: ckan/templates/home/snippets/stats.html:29
+msgid "related items"
+msgstr "souvisejících"
 
 #: ckan/templates/macros/form.html:126
 #, python-format
