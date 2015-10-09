@@ -141,28 +141,31 @@
 //     margin-bottom: 0;
 // }
 .primary {
-    .primary {
-        float: left;
-        margin-left: 0;
-        margin-bottom: 20px;
-        h1,
-        h2,
-        h3,
-        h4 {
-            &:first-child {
-                margin-top: 0;
-            }
-        }
+  .primary {
+    float: left;
+    width: 467px;
+    margin-left: 0;
+    margin-bottom: 20px;
+    h1, h2, h3, h4 {
+      &:first-child {
+        margin-top: 0;
+      }
     }
-    .tertiary {
-        margin-bottom: 20px;
-    }
+  }
+  .tertiary {
+    float: left;
+    width: 180px;
+    margin-left: 18px;
+    margin-bottom: 20px;
+  }
 }
 
-@media (min-width: @screen-sm-min) {
-    .hero {
-        background: url("@{imagePath}/background-tile.png");
-    }
+@media (min-width: 768px) {
+  .hero {
+    background: url("@{imagePath}/prague-background.jpeg");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+  }
 }
 
 .hero:after {

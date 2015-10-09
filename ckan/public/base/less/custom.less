@@ -1,1 +1,48 @@
-// This file is needed in order for ./bin/less to compile in less 1.3.1+
+@prahaRed: #eb1b29;
+@prahaGreen: #72bb3c;
+@prahaBlue: #003f62;
+@prahaGrey: #5f6063;
+@prahaOrange: #d7631c;
+@prahaLightBlue: #017499;
+@prahaLightGrey: #abadb1;
+@gradient: 15;
+
+
+@layoutLinkColor: #b50909;
+@mastheadBackgroundColor: @prahaRed;
+
+@btnPrimaryBackground: @prahaLightBlue;
+@btnPrimaryBackgroundHighlight: darken(@prahaLightBlue, @gradient);
+
+
+@btnBackgroundHighlight: darken(@btnBackground, @gradient);
+
+@btnSuccessBackground: @prahaGreen;
+@btnSuccessBackgroundHighlight: darken(@prahaGreen, @gradient);
+
+@btnDangerBackground: @prahaRed;
+@btnDangerBackgroundHighlight: darken(@prahaRed, @gradient);
+
+@btnWarningBackground: @prahaOrange;
+@btnWarningBackgroundHighlight: darken(@prahaOrange, @gradient);
+
+
+
+@errorText: @prahaRed;
+@orange: @prahaOrange;
+@successText: @prahaGreen;
+@infoText: @prahaBlue;
+@grayDark: @prahaGrey;
+
+
+@activityColorText: #FFFFFF;
+@activityColorBlank: @prahaLightGrey;
+@activityColorNew: @prahaGreen;
+@activityColorNeutral: @prahaLightBlue;
+@activityColorModify: @prahaLightBlue;
+@activityColorDelete: @prahaRed;
+
+
+.navbar.masthead {
+  min-height: 55px;
+}
