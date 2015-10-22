@@ -1144,8 +1144,6 @@ class PackageController(base.BaseController):
         template = self._resource_template(dataset_type)
         return render(template, extra_vars=vars)
 
-    @maintain.deprecated('Resource preview is deprecated. Please use the new '
-                         'resource views')
     def _resource_preview(self, data_dict):
         '''Deprecated in 2.3'''
         return bool(datapreview.get_preview_plugin(data_dict,
