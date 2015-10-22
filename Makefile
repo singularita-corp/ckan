@@ -1,6 +1,9 @@
 #!/usr/bin/make -f
 
-all: ckan/public/base/css/main.min.css
+pos = $(wildcard ckan/i18n/*/*/*.po)
+mos = $(pos:.po=.mo)
+
+all: ckan/public/base/css/main.min.css ${mos}
 
 ckan/public/base/css/%.css: \
 		ckan/public/base/less/%.less \
@@ -9,5 +12,8 @@ ckan/public/base/css/%.css: \
 
 ckan/public/base/css/%.min.css: ckan/public/base/css/%.css
 	cssmin <$< >$@
+
+%.mo: %.po
+	msgfmt -o $@ $<
 
 # EOF
