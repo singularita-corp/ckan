@@ -15,6 +15,7 @@ import ckanext.datastore.db as db
 import ckanext.datastore.logic.schema as dsschema
 import ckanext.datastore.helpers as datastore_helpers
 
+
 log = logging.getLogger(__name__)
 _get_or_bust = logic.get_or_bust
 _validate = ckan.lib.navl.dictization_functions.validate
@@ -182,7 +183,7 @@ def datastore_create(context, data_dict):
             'q': 'id:"{0}"'.format(package_id),
             'fl': 'data_dict',
             'wt': 'json',
-            'fq': 'site_id:"%s"' % config.get('ckan.site_id'),
+            'fq': 'site_id:"%s"' % pylons.config.get('ckan.site_id'),
             'rows': 1
         }
         for record in solr_query.run(q)['results']:
