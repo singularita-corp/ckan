@@ -526,6 +526,7 @@ def datastore_search_sql(context, data_dict):
 
 
 def set_datastore_active_flag(model, data_dict, flag):
+<<<<<<< HEAD
     '''
     Set appropriate datastore_active flag on CKAN resource.
 
@@ -534,6 +535,8 @@ def set_datastore_active_flag(model, data_dict, flag):
     # We're modifying the resource extra directly here to avoid a
     # race condition, see issue #3245 for details and plan for a
     # better fix
+=======
+>>>>>>> 8882377c6... Fix datastore_active race condition also for resource deletion
     update_dict = {'datastore_active': flag}
 
     # get extras(for entity update) and package_id(for search index update)
@@ -548,6 +551,7 @@ def set_datastore_active_flag(model, data_dict, flag):
     # update extras in database for record and its revision
     extras.update(update_dict)
     res_query.update({'extras': extras}, synchronize_session=False)
+
     model.Session.query(model.resource_revision_table).filter(
         model.ResourceRevision.id == data_dict['resource_id'],
         model.ResourceRevision.current is True
