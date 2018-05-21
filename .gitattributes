@@ -1,3 +1,3 @@
-#*.po -diff
+*.po -diff
 *.mo -diff
 *.min.css -diff
