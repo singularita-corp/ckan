@@ -408,8 +408,10 @@ def _register_error_handler(app):
     u'''Register error handler'''
 
     def error_handler(e):
-        extra_vars = {u'code': e.code, u'content': e.description}
-        return base.render(u'error_document_template.html', extra_vars), e.code
+        code = getattr(e, 'code', 500)
+        description = getattr(e, 'description', '')
+        extra_vars = {u'code': code, u'content': description}
+        return base.render(u'error_document_template.html', extra_vars), code
 
     app.register_error_handler(400, error_handler)
     app.register_error_handler(401, error_handler)
