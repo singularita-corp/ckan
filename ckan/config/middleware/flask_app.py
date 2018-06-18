@@ -409,8 +409,15 @@ def _register_error_handler(app):
 
     def error_handler(e):
         code = getattr(e, 'code', 500)
-        description = getattr(e, 'description', '')
-        extra_vars = {u'code': code, u'content': description}
+        content = getattr(e, 'description', '')
+
+        if isinstance(content, str):
+            try:
+                content = content.decode('utf-8')
+            except:
+                content = repr(content)
+
+        extra_vars = {u'code': code, u'content': content}
         return base.render(u'error_document_template.html', extra_vars), code
 
     app.register_error_handler(400, error_handler)
